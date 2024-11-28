@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline-width: 0;
+}
+
+.container-flex {
+    display: flex;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.first-page {
+    cursor: default;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-family: "Courier New", Courier, monospace;
+    color: #48BC41;
+}
+
+.second-page {
+    cursor: default;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: auto;
+    background-image: url(./icones/page2.jpg);
+    background-size: 70vw auto;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+}
+
+#eumesmo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#eumesmo img {
+    border-radius: 15px;
+    max-width: 20vw;
+    width: 60%;
+    height: auto;
+    min-width: 120px;
+}
+
+#description {
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    max-width: 30vw;
+    margin: 0;
+    text-align: left;
+}
+
+#aboutMe {
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    max-width: 30vw;
+}
+
+#right-side, #left-side {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+nav {
+    justify-content: center;
+    gap: 8vw;
+    display: none;
+}
+
+.main-page {
+    cursor: default;
+    min-height: 96vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-image: url("./icones/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.head-title {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    background-image: url("./icones/header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.section {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.icon-grid .icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: #c9c9c969;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 12px;
+}
+
+.icon-grid .icon i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.education-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.education-grid .education {
+    flex: 1;
+    background-color: #00000088;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 12px;
+}
+
+.education-grid .education i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.education-grid .education .label {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    bottom: 8px;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+footer li {
+    list-style: none;
+    margin-left: 16px;
+}
+
+footer li img {
+    max-width: 20px;
+}
+
+/* Media Queries */
+
+/* Estilos para dispositivos pequenos (celulares) */
+@media (max-width: 768px) {
+    .first-page, .second-page, .main-page {
+        padding: 10px;
+    }
+
+    .second-page{
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 20px;
+        gap: 20px; 
+        background-size: contain;
+        background-position: center;
+    }
+
+    #eumesmo img {
+        max-width: 30%;
+        margin-bottom: 15px;
+    }
+
+    #description {
+        max-width: 90%;
+        text-align: center; /* Centraliza o texto */
+    }
+
+/*
+    #eumesmo img {
+        max-width: 80%;
+    }
+
+    #description {
+        max-width: 90%;
+        text-align: center;
+    }*/
+
+    nav {
+        display: flex;
+    }
+
+    .section {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .icon-grid .icon, .education-grid .education {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos para tablets e desktops */
+@media (min-width: 769px) {
+    .icon-grid, .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+    }
+}
