@@ -71,7 +71,7 @@
     text-align: left;
 }
 
-#aboutMe {
+#about-me {
     color: white;
     font-family: "Pixelify Sans", sans-serif;
     font-weight: bold;
@@ -209,27 +209,26 @@ footer li img {
         gap: 20px; 
         background-size: contain;
         background-position: center;
+        
     }
 
     #eumesmo img {
-        max-width: 30%;
-        margin-bottom: 15px;
+        max-width: 32%;
+        margin: -500px 0 -200px 0;
     }
 
     #description {
         max-width: 90%;
-        text-align: center; /* Centraliza o texto */
+        margin: 0 auto 20px;
+        
     }
 
-/*
-    #eumesmo img {
-        max-width: 80%;
-    }
-
-    #description {
+    #about-me{
+        position: relative; 
+        top: 9vh; 
         max-width: 90%;
-        text-align: center;
-    }*/
+        margin: 0 auto;
+    }
 
     nav {
         display: flex;
