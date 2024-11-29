@@ -134,13 +134,13 @@ nav {
 /* Styles for the main page*/
 .main-page {
     cursor: default;
-    min-height: 97vh;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
     background-image: url("./icones/background.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: center;
 }
 
@@ -309,21 +309,41 @@ nav li a{
 /* Styles for the footer */
 footer {
     justify-content: center;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     font-size: 18px;
     padding: 10px;
 }
 
-footer li {
-    list-style: none;
-    margin-left: 16px;
+.contact-methods{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer li img {
-    max-width: 20px;
+form input, textarea, button{
+    border-radius: 5px;
+    color: #fff;
+    border:#5e5e61 solid 1px;
+    display: block;
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #222229;
 }
 
+form textarea{
+    resize: none;
+    height: 60px;
+}
+
+form button{
+    color:rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
 
 /*ainda em construção:P */
 /* Estilos para dispositivos pequenos (celulares) */
