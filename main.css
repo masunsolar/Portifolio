@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Global Styles */
 .container-flex {
     display: flex;
 }
@@ -12,7 +13,7 @@
     cursor: pointer;
 }
 
-/*primeira pagina*/
+/* Styles for the first page */
 .first-page {
     cursor: default;
     height: 100vh;
@@ -68,7 +69,7 @@
     animation: blink.9s infinite reverse;
 }
 
-/*segunda pagina*/
+/* Styles for the second page*/
 .second-page {
     cursor: default;
     padding: 0 5%;
@@ -89,12 +90,6 @@
     align-items: center;
 }
 
-#left-side {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 #eumesmo img {
     border-radius: 15px;
     max-width: clamp(260px, 20vw, 600px);
@@ -111,11 +106,17 @@
     max-width: 30vw;
 }
 
+#left-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 #about-me {
     color: white;
     font-family: "Pixelify Sans", sans-serif;
-    font-weight: bold;
-    font-size: clamp(18px, 2vw, 34px);
+    font-weight: lighter;
+    font-size: clamp(18px, 2vw, 22px);
     max-width: 30vw;
 }
 
@@ -130,7 +131,7 @@ nav {
     display: none;
 }
 
-/* Página principal*/
+/* Styles for the main page*/
 .main-page {
     cursor: default;
     min-height: 97vh;
@@ -165,6 +166,7 @@ header {
     margin: 0;
 }
 
+/* Styles for the menu hamburguer*/
 .menu-hamburger{
     width: 38px;
     cursor: pointer;
@@ -179,7 +181,7 @@ header {
     margin: 8px;
 }
 
-/*estilização menu hamburguer*/
+/* Styles for the menu hamburguer when it's active */
 nav{
     background-color: #222229;
     padding: 10px 0;
@@ -200,6 +202,7 @@ nav li a{
     text-decoration: none;
 }
 
+/* Styles for the section */
 .section {
     padding: 0 15vw;
 }
@@ -209,13 +212,49 @@ nav li a{
     margin: 30px 0 10px;
 }
 
+/*só pra sumir com o button*/
+.scroll-btn{
+    display: none;
+}
+
+/* num deu botão ta indo longe
+.scroll-btn {
+    position: fixed; 
+    bottom: 50%; 
+    right: 10px; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; 
+    color: black;
+    outline: none; 
+}
+
+.scroll-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7); 
+}*/
+
+
 .icon-grid{
+    position: relative; 
+    overflow: hidden;
     padding: 0 2vw;
     display: flex;           
     flex-wrap: nowrap;        
     overflow-x: auto;        
     gap: 8px;
     scroll-behavior: smooth;
+}
+
+.links{
+    color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .icon img{
@@ -267,11 +306,11 @@ nav li a{
     margin-top: 10px;
 }
 
+/* Styles for the footer */
 footer {
+    justify-content: center;
     background-color: black;
     color: white;
-    bottom: 8px;
-    text-align: center;
     font-size: 18px;
     padding: 10px;
 }
@@ -310,7 +349,7 @@ footer li img {
 
     #eumesmo img {
         max-width: 300px;
-        margin: -500px 0 -200px 0;
+        margin: calc(-25px - 10vw) 0 calc(5px - 2vw) 0
     }
 
     #description {
@@ -320,16 +359,18 @@ footer li img {
 
     #about-me{
         position: relative; 
-        max-width: 90%;
+        max-width: 80%;
         margin: 0 auto;
-    }
-
-    nav {
-        display: flex;
     }
     
     .main-page{
         padding: 0;
+    }
+
+    nav li{
+        font-size: 14px;
+        margin: auto;
+        margin: 2vw;
     }
 
     .section {

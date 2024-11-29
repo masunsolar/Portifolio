@@ -51,14 +51,26 @@ $(document).ready(function () {
     });
 });
 
-//seta
-document.querySelector('.left-btn').addEventListener('click', function() {
-    document.querySelector('.icon-grid').scrollBy({
-        left: -100, // Ajuste a distância da rolagem, se necessário
-        behavior: 'smooth'
+/*seta que ta indo pra casa do carai >:(
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButtons = document.querySelectorAll('.scroll-btn');
+
+    scrollButtons.forEach(button => {
+        button.addEventListener('mousedown', function(event) {
+            event.preventDefault(); // Impede que o botão receba foco
+        });
+
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Impede que o evento de clique se propague
+            const iconGrid = this.closest('.icon-grid');
+            iconGrid.scrollBy({
+                left: 100, // Ajuste a quantidade de rolagem conforme necessário
+                behavior: 'smooth'
+            });
+        });
     });
 });
-
+*/
 document.querySelector('.right-btn').addEventListener('click', function() {
     document.querySelector('.icon-grid').scrollBy({
         left: 100, // Ajuste a distância da rolagem, se necessário
