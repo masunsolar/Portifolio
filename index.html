@@ -9,14 +9,20 @@
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <script src=”caminho para o arquivo JavaScript”></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="main.js"></script>
     <title>Portifólio</title>
     
 </head>
 <body>
     <section class= "first-page container-flex">
         <h1 id="title">Hello World.</h1>
+        <p class="roll">Scroll down</p>
     </section>
 
     <section class="second-page container-flex">
@@ -41,17 +47,11 @@
         <header>
             <div class="head-title container-flex">
                 <h1>Natan S. Rodrigues</h1>
-                <div class="menu-hamburger">
-                    <span>
-
-                    </span>
-                    <span>
-
-                    </span>
-                    <span>
-
-                    </span>
-                </div>
+            </div>
+            <div class="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </header>
         <nav>
@@ -123,6 +123,7 @@
                         <img class="icons" src="./icones/placeholder.png" alt="Imagem placeholder">
                         <div class="icon-text">Label</div>
                     </div>
+                    <button class="scroll-btn right-btn">→</button>
                 </div>
             </div>
 
@@ -201,6 +202,7 @@
                         <img class="icons" src="./icones/placeholder.png" alt="Imagem placeholder">
                         <div class="icon-text">Label</div>
                     </div>
+                    <button class="scroll-btn right-btn">→</button>
                 </div>
             </div>
 
@@ -239,6 +241,7 @@
                         <img class="icons" src="./icones/placeholder.png" alt="Imagem placeholder">
                         Artist
                     </div>
+                    <button class="scroll-btn right-btn">→</button>
                 </div>
             </div>
     </section>
@@ -248,18 +251,5 @@
             &copy; 2024 Portifólio Natan - todos os direitos reservados.<br/>
         </div>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('nav').hide(); 
-    
-            $('.menu-hamburger').click(function () {
-                $('nav').slideToggle(); // Alterna visibilidade
-            });
-        });
-    </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
     cursor: pointer;
 }
 
+/*primeira pagina*/
 .first-page {
     cursor: default;
     height: 100vh;
@@ -23,10 +24,51 @@
 }
 
 #title {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "DotGothic16", sans-serif;
     color: #48BC41;
+    font-size: 30px;
+    border-right: 4px solid;
+    transform: skew(-12deg);
+    width: 12ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: digitando 1s steps(12), blink.9s infinite;
 }
 
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    40%{
+        border-color: transparent;
+    }
+}
+
+.roll{
+    font-family: "DotGothic16", sans-serif;
+    color: #48BC41;
+    position: absolute;
+    bottom: 25px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.roll::after {
+    content: "";
+    display: block;
+    margin: 10px auto 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #48BC41;
+    animation: blink.9s infinite reverse;
+}
+
+/*segunda pagina*/
 .second-page {
     cursor: default;
     padding: 0 5%;
@@ -55,7 +97,7 @@
 
 #eumesmo img {
     border-radius: 15px;
-    max-width: 20vw;
+    max-width: clamp(260px, 20vw, 600px);
     width: 60%;
     height: auto;
     min-width: 120px;
@@ -65,22 +107,21 @@
     color: white;
     font-family: "Pixelify Sans", sans-serif;
     font-weight: bold;
+    font-size: clamp(16px, 2vw, 22px);
     max-width: 30vw;
-    margin: 0;
-    text-align: left;
 }
 
 #about-me {
     color: white;
     font-family: "Pixelify Sans", sans-serif;
     font-weight: bold;
+    font-size: clamp(18px, 2vw, 34px);
     max-width: 30vw;
 }
 
 #right-side, #left-side {
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
 }
 
 nav {
@@ -89,6 +130,7 @@ nav {
     display: none;
 }
 
+/* Página principal*/
 .main-page {
     cursor: default;
     min-height: 97vh;
@@ -113,6 +155,31 @@ header {
     justify-content: space-between;
 }
 
+.head-title{
+    display: flex;
+    align-items: center;
+    margin-left: 11vw;
+}
+
+.head-title h1{
+    margin: 0;
+}
+
+.menu-hamburger{
+    width: 38px;
+    cursor: pointer;
+    margin-right: 11vw;
+}
+
+.menu-hamburger span{
+    height: 2px;
+    width: 100%;
+    display: block;
+    background-color: white;
+    margin: 8px;
+}
+
+/*estilização menu hamburguer*/
 nav{
     background-color: #222229;
     padding: 10px 0;
@@ -122,10 +189,10 @@ nav{
 nav li{
     list-style: none;
     display: inline;
-    margin-right: 16px;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 25px;
 }
 
 nav li a{
@@ -133,21 +200,8 @@ nav li a{
     text-decoration: none;
 }
 
-.menu-hamburger{
-    width: 32px;
-    cursor: pointer;
-}
-
-.menu-hamburger span{
-    height: 2px;
-    width: 100%;
-    display: block;
-    background-color: white;
-    margin-bottom: 6px;
-}
-
 .section {
-    padding: 0 10vw;
+    padding: 0 15vw;
 }
 
 .section-title {
@@ -156,12 +210,12 @@ nav li a{
 }
 
 .icon-grid{
+    padding: 0 2vw;
     display: flex;           
     flex-wrap: nowrap;        
     overflow-x: auto;        
-    gap: 15px;                
-    padding-bottom: 10px;    
-    scrollbar-width: thin; 
+    gap: 8px;
+    scroll-behavior: smooth;
 }
 
 .icon img{
@@ -231,34 +285,41 @@ footer li img {
     max-width: 20px;
 }
 
+
+/*ainda em construção:P */
 /* Estilos para dispositivos pequenos (celulares) */
 @media (max-width: 768px) {
+    #title{
+        font-size: 20px;
+    }
+
     .first-page, .second-page, .main-page {
         padding: 10px;
     }
 
     .second-page{
+        height: 125vh;
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
         padding: 20px;
         background-size: contain;
-        background-position: center;+
+        background-position: center;
+        min-width: 500px;
     }
 
     #eumesmo img {
-        max-width: 32%;
+        max-width: 300px;
         margin: -500px 0 -200px 0;
     }
 
     #description {
         max-width: 90%;
-        margin: 0 auto 20px;
+        margin: 0 auto 80px;
     }
 
     #about-me{
         position: relative; 
-        top: 9vh; 
         max-width: 90%;
         margin: 0 auto;
     }
@@ -266,10 +327,18 @@ footer li img {
     nav {
         display: flex;
     }
+    
+    .main-page{
+        padding: 0;
+    }
 
     .section {
         padding-left: 5vw;
         padding-right: 5vw;
+    }
+
+    .icon-grid{
+        scrollbar-width: none; 
     }
 
     .icon-grid .icon, .education-grid .education {
