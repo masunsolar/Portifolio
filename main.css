@@ -1,8 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
-    outline-width: 0;
+    box-sizing: border-box;
 }
 
 .container-flex {
@@ -92,7 +91,7 @@ nav {
 
 .main-page {
     cursor: default;
-    min-height: 96vh;
+    min-height: 97vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
@@ -102,37 +101,84 @@ nav {
     background-position: center;
 }
 
-.head-title {
-    text-align: center;
+header {
     padding: 20px;
     font-size: 24px;
     background-image: url("./icones/header.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+nav{
+    background-color: #222229;
+    padding: 10px 0;
+    display: none;
+}
+
+nav li{
+    list-style: none;
+    display: inline;
+    margin-right: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-hamburger{
+    width: 32px;
+    cursor: pointer;
+}
+
+.menu-hamburger span{
+    height: 2px;
+    width: 100%;
+    display: block;
+    background-color: white;
+    margin-bottom: 6px;
 }
 
 .section {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding: 0 10vw;
 }
 
 .section-title {
-    font-size: 18px;
-    margin-top: 30px;
+    font-size: 24px;
+    margin: 30px 0 10px;
+}
+
+.icon-grid{
+    display: flex;           
+    flex-wrap: nowrap;        
+    overflow-x: auto;        
+    gap: 15px;                
+    padding-bottom: 10px;    
+    scrollbar-width: thin; 
+}
+
+.icon img{
+    max-width: 96px;
+    border-radius: 100%;
     margin-bottom: 10px;
 }
 
-.icon-grid {
+.icon-grid, .education-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .icon-grid .icon {
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 108px;
+    height: 156px;
     background-color: #c9c9c969;
     border-radius: 10px;
     align-items: center;
@@ -142,20 +188,17 @@ nav {
     font-size: 12px;
 }
 
-.icon-grid .icon i {
+.icon-grid .icon i,
+.education-grid .education i {
     font-size: 24px;
     margin-bottom: 5px;
 }
 
 .education-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 20px;
 }
 
 .education-grid .education {
-    flex: 1;
     background-color: #00000088;
     border-radius: 10px;
     padding: 20px;
@@ -164,11 +207,6 @@ nav {
     flex-direction: column;
     color: #fff;
     font-size: 12px;
-}
-
-.education-grid .education i {
-    font-size: 24px;
-    margin-bottom: 5px;
 }
 
 .education-grid .education .label {
@@ -193,8 +231,6 @@ footer li img {
     max-width: 20px;
 }
 
-/* Media Queries */
-
 /* Estilos para dispositivos pequenos (celulares) */
 @media (max-width: 768px) {
     .first-page, .second-page, .main-page {
@@ -206,10 +242,8 @@ footer li img {
         justify-content: center; 
         align-items: center; 
         padding: 20px;
-        gap: 20px; 
         background-size: contain;
-        background-position: center;
-        
+        background-position: center;+
     }
 
     #eumesmo img {
@@ -220,7 +254,6 @@ footer li img {
     #description {
         max-width: 90%;
         margin: 0 auto 20px;
-        
     }
 
     #about-me{
@@ -250,7 +283,6 @@ footer li img {
     .icon-grid, .education-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 20px;
     }
 
     nav {
