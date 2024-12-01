@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="main.js"></script>
     <title>Portifólio</title>
@@ -312,12 +310,14 @@
             <div class="contact-methods">
                 <div>
                     <h3>Fale conosco</h3>
-                    <form>
-                        <input type="text" placeholder="Seu nome" required />
-                        <input type="email" placeholder="Seu gmail" required />
-                        <input type="tel" placeholder="Seu telefone (opicional)" />
-                        <textarea placeholder="Sua mensagem" required></textarea>
-                        <button type="submit">Enviar</button>
+                    <form action="https://formsubmit.co/masunsolar@gmail.com" method="POST">
+                        <input type="text" name="name" placeholder="Seu nome" required />
+                        <input type="email" name="email" placeholder="Digite seu Email" required>
+                        <input type="tel" name="phone" placeholder="Seu telefone (opicional)" />
+                        <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                        <button type="submit" value="Enviar">Enviar</button>
+
+                        <input type="hidden" name="_captcha" value="false">
                     </form>
                 </div>
             &copy; 2024 Portifólio Natan - todos os direitos reservados.<br/>
