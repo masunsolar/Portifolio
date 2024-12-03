@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Tiny5&family=VT323&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="main.js"></script>
     <title>Portifólio</title>
-    
 </head>
+
 <body>
-    <section id="home-page" class= "first-page container-flex">
-        <h1 id="title">Hello World.</h1>
+    <!-- OPENING PAGE -->
+    <section id="home-page" class= "first-page container-flex cursor-default">
+        <h1 id="title">>Hello World!</h1>
         <p class="roll">Scroll down</p>
     </section>
 
-    <section id="about" class="second-page container-flex">
-        <div class="container-flex" id="left-side">
-            <div id="eumesmo">
-                <img src="./icones/eu.jpg" alt="Dono do portifólio">
+    <!-- PAGE ABOUT ME -->
+    <section id="about" class="second-page container-flex cursor-default">
+        <div class="about-grid">
+            <div class="about-column">
+                <div id="eumesmo">
+                    <img src="./icones/eu.jpg" alt="Dono do portfólio">
+                </div>
+                <p id="description">
+                    Programador: Natan S. Rodrigues<br>
+                    Idade: 19 anos
+                </p>
             </div>
-            <p id="description">
-                Programador: Natan S. Rodrigues<br>
-                Idade: 19 anos
-            </p>
-        </div>
-        <div class="container-flex" id="right-side">
-            <p id="about-me">
-                <br>• Proficiência nos pacotes Microsoft Word, PowerPoint e Excel.
-                <br>• Habilidade em edição de imagem e vídeo.
-                <br>• Conhecimentos em programação HTML, CSS, JavaScript, Java, C e Python.
-                <br><br>Atualmente, estou cursando Ciência da Computação na UniFil e Full Stack Python na EBAC. Fui ganhador do Ideathon IntegraQM, o que demonstra minha capacidade de inovação e resolução de problemas.
-            </p>
+            <div class="about-column">
+                <img src="./icones/page2.jpg" alt="Imagem de fundo" class="background-image">
+            </div>
+            <div class="about-column">
+                <p id="about-me">
+                    • Proficiência nos pacotes Microsoft Word, PowerPoint e Excel.<br>
+                    • Habilidade em edição de imagem e vídeo.<br>
+                    • Conhecimentos em programação HTML, CSS, JavaScript, Java, C e Python.<br><br>
+                    Atualmente, estou cursando Ciência da Computação na UniFil e Full Stack Python na EBAC. Fui ganhador do Ideathon IntegraQM, o que demonstra minha capacidade de inovação e resolução de problemas.
+                </p>
+            </div>
         </div>
     </section>
 
-
-    <section class="main-page">
+    <!-- MAIN PAGE -->
+    <section class="main-page cursor-default">
         <header>
             <div class="head-title container-flex">
                 <h1>Natan S. Rodrigues</h1>
             </div>
-            <div class="menu-hamburger">
+
+            <!-- HAMBURGUER MENU -->
+            <div class="menu-hamburger pointer">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+
+            <!-- MENU -->
         </header>
         <nav>
             <div class="container">
@@ -78,8 +87,8 @@
             </div>
         </nav>
 
-            <div class="section">
-                <div class="section-title">Redes sociais</div>
+        <div class="section">
+            <div class="section-title">Redes sociais</div>
                 <div class="icon-grid pointer container-flex">
                     <div class="icon">
                         <a class="links" href="https://www.instagram.com/nathansunrodriguez/" target="_blank">
@@ -309,19 +318,16 @@
     <footer id="forms" class="container-flex">
         <div class="container">
             <div class="contact-methods">
-                <div>
-                    <h3>Fale conosco</h3>
-                    <form action="https://formsubmit.co/masunsolar@gmail.com" method="POST">
-                        <input type="text" name="name" placeholder="Seu nome" required />
-                        <input type="email" name="email" placeholder="Digite seu Email" required>
-                        <input type="tel" name="phone" placeholder="Seu telefone (opicional)" />
-                        <textarea name="message" placeholder="Sua mensagem" required></textarea>
-                        <button type="submit" value="Enviar">Enviar</button>
-
-                        <input type="hidden" name="_captcha" value="false">
-                    </form>
-                </div>
-            &copy; 2024 Portifólio Natan - todos os direitos reservados.<br/>
+                <h3>Fale conosco</h3>
+                <form action="https://formsubmit.co/masunsolar@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Seu nome" required />
+                    <input type="email" name="email" placeholder="Digite seu Email" required>
+                    <input type="tel" name="phone" placeholder="Seu telefone (opicional)" />
+                    <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                    <button class="pointer" type="submit" value="Enviar">Enviar</button>
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            &copy; 2024 Portifólio Natan<br/>
         </div>
     </footer>
 </body>

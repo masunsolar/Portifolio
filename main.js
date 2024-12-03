@@ -1,6 +1,5 @@
 //first page
-let lastScrollY = window.scrollY; 
-let timeoutID = null; 
+let timeoutID = null;
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
@@ -11,13 +10,13 @@ function restartAnimation() {
     const titleElement = document.getElementById('title');
     titleElement.style.animation = 'none'; 
     void titleElement.offsetWidth; 
-    titleElement.style.animation = 'digitando 2s steps(12), blink 0.9s infinite'; 
-    titleElement.style.opacity = '1'; 
+    titleElement.style.animation = 'digitando 2s steps(12) forwards'; 
+    titleElement.style.opacity = '1';
 }
 
 window.addEventListener('scroll', function () {
     const titleElement = document.getElementById('title');
-    
+
     if (!isInViewport(titleElement)) {
         titleElement.style.opacity = '0'; 
         titleElement.style.animation = 'none'; 
@@ -29,7 +28,6 @@ window.addEventListener('scroll', function () {
             timeoutID = setTimeout(restartAnimation, 100);
         }
     }
-    lastScrollY = window.scrollY;
 });
 
 //scroll down

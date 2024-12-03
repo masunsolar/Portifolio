@@ -13,9 +13,14 @@
     cursor: pointer;
 }
 
+.cursor-default{
+    cursor: default;
+}
+
 /* Styles for the first page */
 .first-page {
-    cursor: default;
+    color: #48BC41;
+    font-family: "DotGothic16", sans-serif;
     height: 100vh;
     width: 100%;
     background-color: black;
@@ -25,36 +30,27 @@
 }
 
 #title {
-    font-family: "DotGothic16", sans-serif;
-    color: #48BC41;
-    font-size: 30px;
-    border-right: 4px solid;
+    font-size: 36px;
     transform: skew(-12deg);
-    width: 12ch;
+    width: 14ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: digitando 1s steps(12), blink.9s infinite;
+    animation: digitando 10s steps(14) forwards;
+    opacity: 1;
 }
 
-@keyframes digitando{
-    from{
-        width: 0;
-    }
-}
-
-@keyframes blink{
-    40%{
-        border-color: transparent;
-    }
+#title::after {
+    content: "_"; 
+    position: absolute;
+    animation: blink 1s infinite reverse;
 }
 
 .roll{
-    font-family: "DotGothic16", sans-serif;
-    color: #48BC41;
     position: absolute;
     bottom: 25px;
     transition: opacity 0.3s ease;
     opacity: 1;
+    text-shadow: 0 0 5px #48BC41, 0 0 10px #48BC41, 0 0 20px #48BC41, 0 0 40px #48BC41
 }
 
 .roll::after {
@@ -67,21 +63,43 @@
     border-right: 10px solid transparent;
     border-top: 10px solid #48BC41;
     animation: blink.9s infinite reverse;
+    text-shadow: 0 0 5px #48BC41, 0 0 10px #48BC41, 0 0 20px #48BC41, 0 0 40px #48BC41
 }
 
-/* Styles for the second page*/
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    50% {
+        opacity: 0; /* Faz o sublinhado desaparecer temporariamente */
+    }
+}
+
+/* Styles for the second page */
 .second-page {
-    cursor: default;
-    padding: 0 5%;
+    font-family: "Tiny5", sans-serif;
     display: flex;
-    justify-content: space-between;
     height: 100vh;
     width: auto;
-    background-image: url(./icones/page2.jpg);
-    background-size: 70vw auto;
-    background-repeat: no-repeat;
     background-color: black;
-    background-position: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
 }
 
 #eumesmo {
@@ -98,42 +116,26 @@
     min-width: 120px;
 }
 
-#description {
+#description, #about-me {
     color: white;
-    font-family: "Pixelify Sans", sans-serif;
-    font-weight: bold;
-    font-size: clamp(16px, 2vw, 22px);
+    font-size: clamp(14px, 2vw, 30px);
     max-width: 30vw;
-}
-
-#left-side {
-    display: flex;
-    align-items: center;
-    gap: 20px;
 }
 
 #about-me {
-    color: white;
-    font-family: "Pixelify Sans", sans-serif;
     font-weight: lighter;
-    font-size: clamp(18px, 2vw, 22px);
-    max-width: 30vw;
+    font-size: clamp(16px, 2vw, 34px);
 }
 
-#right-side, #left-side {
-    flex-direction: column;
-    justify-content: center;
-}
-
-nav {
-    justify-content: center;
-    gap: 8vw;
-    display: none;
+.background-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 15px;
+    opacity: 0.8; /* Controle para visualização clara */
 }
 
 /* Styles for the main page*/
 .main-page {
-    cursor: default;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -164,12 +166,13 @@ header {
 
 .head-title h1{
     margin: 0;
+    margin-left: clamp(-10px, -2vw, 0px);
+    font-size: clamp(30px, 2vw, 64px);
 }
 
 /* Styles for the menu hamburguer*/
 .menu-hamburger{
     width: 38px;
-    cursor: pointer;
     margin-right: 11vw;
 }
 
@@ -238,7 +241,6 @@ nav li a{
 .scroll-btn:hover {
     background-color: rgba(255, 255, 255, 0.7); 
 }*/
-
 
 .icon-grid{
     position: relative; 
@@ -342,49 +344,55 @@ form button{
     color:rgb(0, 0, 0);
     background-color: #ffffff;
     border: none;
-    cursor: pointer;
 }
 
 /*ainda em construção:P */
 /* Estilos para dispositivos pequenos (celulares) */
 @media (max-width: 768px) {
     #title{
-        font-size: 20px;
+        font-size: 24px;
     }
 
-    .first-page, .second-page, .main-page {
-        padding: 10px;
-    }
-
-    .second-page{
-        height: 125vh;
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        padding: 20px;
-        background-size: contain;
+    .second-page {
+        justify-content: center;
+        align-items: center;
+        padding: 48px;
+        background-size: cover;
         background-position: center;
-        min-width: 500px;
+        height: auto;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    #eumesmo {
+        margin: 20px 0; 
     }
 
     #eumesmo img {
         max-width: 300px;
-        margin: calc(-25px - 10vw) 0 calc(5px - 2vw) 0
     }
 
-    #description {
-        max-width: 90%;
-        margin: 0 auto 80px;
+    #description, #about-me {
+        max-width: 90%; 
+        margin: 0 auto; 
     }
 
-    #about-me{
-        position: relative; 
-        max-width: 80%;
-        margin: 0 auto;
+    .background-image{
+        width: 15vw
     }
-    
+
     .main-page{
         padding: 0;
+    }
+
+    .head-title h1{
+        margin: -9vw;
+    }
+
+    .menu-hamburger{
+        margin-right: 3vw;
     }
 
     nav li{
