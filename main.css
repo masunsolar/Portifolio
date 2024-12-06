@@ -183,9 +183,15 @@ header {
 }
 
 /* Styles for the menu hamburguer when it's active */
+.container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 nav{
     background-color: #222229;
-    padding: 10px 0;
+    padding: 12px 0;
     display: none;
 }
 
