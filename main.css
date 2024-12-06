@@ -1,7 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
+}
+
+body{
+    background-color: black;
 }
 
 /* Global Styles */
@@ -24,18 +28,17 @@
     height: 100vh;
     width: 100%;
     background-color: black;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #title {
-    font-size: 36px;
+    font-size: clamp(12px, 3vw, 36px);
     transform: skew(-12deg);
     width: 14ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: digitando 10s steps(14) forwards;
+    animation: digitando 1s steps(14) forwards;
     opacity: 1;
 }
 
@@ -81,7 +84,6 @@
 /* Styles for the second page */
 .second-page {
     font-family: "Tiny5", sans-serif;
-    display: flex;
     height: 100vh;
     width: auto;
     background-color: black;
@@ -92,18 +94,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     width: 100%;
-    height: 100vh;
+    height: 100%; /*precisa arrumar isso*/
 }
 
 .about-column {
-    display: flex;
     flex-direction: column;
     align-items:center;
     justify-content: center;
 }
 
 #eumesmo {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -118,17 +118,17 @@
 
 #description, #about-me {
     color: white;
-    font-size: clamp(14px, 2vw, 30px);
+    font-size: clamp(14px, 2vw, 22px);
     max-width: 30vw;
 }
 
 #about-me {
     font-weight: lighter;
-    font-size: clamp(16px, 2vw, 34px);
+    font-size: clamp(16px, 2vw, 26px);
 }
 
 .background-image {
-    max-width: 40%;
+    max-width: 6vw;
     height: auto;
     border-radius: 15px;
     opacity: 0.8; /* Controle para visualização clara */
@@ -153,13 +153,11 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display: flex;
     align-items: center; 
     justify-content: space-between;
 }
 
 .head-title{
-    display: flex;
     align-items: center;
     margin-left: 11vw;
 }
@@ -230,7 +228,6 @@ nav li a{
     border-radius: 50%; 
     background-color: rgba(255, 255, 255, 0.5); 
     border: none; 
-    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px; 
@@ -245,8 +242,7 @@ nav li a{
 .icon-grid{
     position: relative; 
     overflow: hidden;
-    padding: 0 2vw;
-    display: flex;           
+    padding: 0 2vw;           
     flex-wrap: nowrap;        
     overflow-x: auto;        
     gap: 8px;
@@ -266,12 +262,10 @@ nav li a{
 }
 
 .icon-grid, .education-grid {
-    display: flex;
     flex-wrap: nowrap;
 }
 
 .icon-grid .icon {
-    display: flex;
     width: 108px;
     height: 156px;
     background-color: #c9c9c969;
@@ -318,7 +312,6 @@ footer {
 }
 
 .contact-methods{
-    display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
@@ -380,7 +373,7 @@ form button{
     }
 
     .background-image{
-        width: 15vw
+        min-width: 65px;
     }
 
     .main-page{
@@ -421,9 +414,5 @@ form button{
     .icon-grid, .education-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    nav {
-        display: flex;
     }
 }
