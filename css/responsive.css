@@ -21,15 +21,15 @@
 
     /* --- CORREÇÃO DA LINHA DO TÍTULO --- */
     .section-title {
-        font-size: 1.6rem; /* Tamanho seguro para caber na tela */
-        flex-direction: row; /* Garante que fiquem lado a lado */
+        font-size: 2rem; 
+        flex-direction: row; 
         align-items: center;
-        gap: 15px; /* Espaço entre o texto e a linha */
-        white-space: nowrap; /* Tenta manter o texto numa linha só */
+        gap: 15px; 
+        white-space: nowrap; 
     }
     
     .section-title .line {
-        width: auto; /* Reseta largura fixa */
+        width: auto; 
         flex-grow: 1; /* A linha estica para preencher o resto da tela */
         min-width: 20px; /* Garante que a linha nunca suma totalmente */
         height: 1px; /* Espessura da linha */
@@ -127,7 +127,7 @@
     }
 
     .contact-box h2 {
-        font-size: 1.5rem; /* Fonte menor para não quebrar */
+        font-size: 2.5rem; /* Fonte menor para não quebrar */
         word-break: break-word;
         line-height: 1.2;
         margin-bottom: 15px;
