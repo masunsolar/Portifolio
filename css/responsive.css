@@ -16,18 +16,23 @@
 @media (max-width: 768px) {
     /* 1. Ajustes Gerais de Texto */
     html {
-        font-size: 14px; /* Reduz a base da fonte um pouquinho */
+        font-size: 14px;
     }
 
+    /* --- CORREÇÃO DA LINHA DO TÍTULO --- */
     .section-title {
-        font-size: 1.8rem; /* Títulos das seções menores */
-        flex-direction: column; /* Linha embaixo do texto, não do lado */
-        align-items: flex-start;
-        gap: 10px;
+        font-size: 1.6rem; /* Tamanho seguro para caber na tela */
+        flex-direction: row; /* Garante que fiquem lado a lado */
+        align-items: center;
+        gap: 15px; /* Espaço entre o texto e a linha */
+        white-space: nowrap; /* Tenta manter o texto numa linha só */
     }
     
     .section-title .line {
-        width: 100%; /* Linha ocupa largura total */
+        width: auto; /* Reseta largura fixa */
+        flex-grow: 1; /* A linha estica para preencher o resto da tela */
+        min-width: 20px; /* Garante que a linha nunca suma totalmente */
+        height: 1px; /* Espessura da linha */
     }
 
     /* 2. Navbar Ajustada */
@@ -35,13 +40,13 @@
     .mobile-toggle { display: block; }
     
     .navbar {
-        padding: 15px 20px; /* Menos padding */
+        padding: 15px 20px;
         justify-content: space-between;
     }
 
     .logo {
-        font-size: 1.2rem; /* Logo menor para não quebrar */
-        width: auto; /* Tira a largura fixa do desktop */
+        font-size: 1.2rem;
+        width: auto;
         margin-right: 0;
     }
 
@@ -49,7 +54,7 @@
         position: relative;
         right: auto;
         top: auto;
-        margin-left: auto; /* Empurra para a direita */
+        margin-left: auto;
         margin-right: 15px;
         font-size: 1rem;
     }
@@ -61,7 +66,7 @@
         align-items: center;
         text-align: center;
         padding-top: 100px;
-        height: auto; /* Altura flexível no mobile */
+        height: auto;
         min-height: 100vh;
         padding-bottom: 50px;
     }
@@ -74,7 +79,7 @@
     }
 
     .glitch-title { 
-        font-size: 2.5rem; /* Título principal menor */
+        font-size: 2.5rem;
         line-height: 1.1;
     }
 
@@ -96,10 +101,10 @@
 
     .btn {
         width: 100%;
-        max-width: 100%; /* Ocupa a largura disponível */
+        max-width: 100%;
         margin: 0 0 15px 0;
         display: block;
-        box-sizing: border-box; /* Garante que padding não estoure */
+        box-sizing: border-box;
     }
     
     .btn.primary { margin-right: 0; }
@@ -107,23 +112,23 @@
     /* 4. Bento Grid & Projetos */
     .bento-grid, .project-grid {
         display: grid;
-        grid-template-columns: 1fr; /* Uma coluna só */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
     .profile-img {
-        height: 300px; /* Foto menor no mobile */
+        height: 300px;
     }
 
-    /* 5. Contato (Ajuste Crítico do Print) */
+    /* 5. Contato */
     .contact-box {
         padding: 40px 15px;
         margin-bottom: 30px;
     }
 
     .contact-box h2 {
-        font-size: 1.5rem; /* DRASTICAMENTE MENOR (Era 3rem) */
-        word-break: break-word; /* Quebra palavras longas se necessário */
+        font-size: 1.5rem; /* Fonte menor para não quebrar */
+        word-break: break-word;
         line-height: 1.2;
         margin-bottom: 15px;
     }
@@ -133,12 +138,13 @@
         padding: 0 10px;
     }
     
+    /* Esconde prefixos USER@NAME no mobile para dar espaço */
     .input-prefix {
-        display: none; /* Esconde o prefixo "USER@NAME" no celular pra ganhar espaço */
+        display: none; 
     }
     
     .input-group {
-        padding: 10px; /* Menos padding interno */
+        padding: 10px;
     }
     
     .footer-links {
