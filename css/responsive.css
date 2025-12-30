@@ -1,0 +1,81 @@
+/* Desktop */
+@media (min-width: 768px) {
+    .code-block { display: block; min-width: 300px; }
+
+    .bento-grid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    .profile-card { grid-row: span 2; }
+    /* Ajuste da logo apenas no desktop */
+    .logo { min-width: 320px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Navbar */
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    .lang-switch {
+        position: absolute;
+        right: 60px;
+        top: 25px;
+        margin-right: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glitch-title { font-size: 3rem; }
+
+    .hero-desc {
+        margin: 0 auto 30px auto;
+        max-width: 90%;
+    }
+
+    /* Botões */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 15px auto;
+        display: block;
+    }
+    
+    .btn.primary { margin-right: 0; }
+
+    .contact-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+}

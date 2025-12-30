@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natan S. Rodrigues Dev</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=VT323&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="./assets/me.jpg">
-    
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
     <div class="crt-overlay"></div>
@@ -20,10 +23,16 @@
         <div class="logo">
             <span class="cmd">></span> <span id="typewriter"></span><span class="blink">_</span>
         </div>
+
+        <div class="lang-switch">
+            <span id="btn-pt" class="lang-btn active">PT</span> /
+            <span id="btn-en" class="lang-btn">EN</span>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="#about" data-text="Sobre">Sobre</a></li>
-            <li><a href="#projects" data-text="Projetos">Projetos</a></li>
-            <li><a href="#contact" class="btn-contact">Contato</a></li>
+            <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projetos</a></li>
+            <li><a href="#contact" class="btn-contact" data-i18n="nav_contact">Contato</a></li>
         </ul>
         <div class="mobile-toggle">|||</div>
     </nav>
@@ -31,15 +40,17 @@
     <main>
         <section class="hero container">
             <div class="hero-content">
-                <p class="mono-tag">:: WELCOME USER ::</p>
+                <p class="mono-tag" data-i18n="welcome_tag">:: BEM-VINDO USUÁRIO ::</p>
                 <h1 class="glitch-title" data-text="FULL STACK DEVELOPER">FULL STACK<br>DEVELOPER</h1>
-                <p class="hero-desc">
-                    Estudante de Ciência da Computação (UniFil) e explorador do caos digital. 
+                <p class="hero-desc" data-i18n="hero_desc">
+                    Estudante de Ciência da Computação (UniFil) e explorador do caos digital.
                     Crio soluções em Python, Java e Web com estética única.
                 </p>
                 <div class="hero-btns">
-                    <a href="#projects" class="btn primary">Ver Projetos</a>
-                    <a href="./assets/Natan_Souza_Rodrigues_curriculo-programador.pdf" download="Natan_Rodrigues_CV.pdf" class="btn secondary">Download CV</a>
+                    <a href="#projects" class="btn primary" data-i18n="btn_projects">Ver Projetos</a>
+
+                    <a id="cv-btn" href="./assets/curriculo_pt.pdf" download="Natan_Rodrigues_CV_PT.pdf"
+                        class="btn secondary" data-i18n="btn_cv">Download CV</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -54,19 +65,19 @@
         </section>
 
         <section id="about" class="about container">
-            <h2 class="section-title">Sobre Mim <span class="line"></span></h2>
-            
+            <h2 class="section-title"><span data-i18n="title_about">> Sobre_Mim</span> <span class="line"></span></h2>
+
             <div class="bento-grid">
                 <div class="bento-item profile-card reveal">
                     <img src="./assets/eu.jpg" alt="Natan Profile" class="profile-img">
                     <div class="overlay-text">
                         <h3>Natan S. R.</h3>
-                        <p>19 anos • Londrina/PR</p>
+                        <p data-i18n="profile_desc">19 anos • Londrina/PR</p>
                     </div>
                 </div>
 
                 <div class="bento-item stack-card reveal delay-1">
-                    <h3>Stack Principal</h3>
+                    <h3 data-i18n="stack_title">> Stack_Principal</h3>
                     <div class="tags">
                         <span>Python</span>
                         <span>Java</span>
@@ -78,7 +89,7 @@
                 </div>
 
                 <div class="bento-item info-card reveal delay-2">
-                    <h3>Educação</h3>
+                    <h3 data-i18n="education_title">> Educação</h3>
                     <ul class="list-retro">
                         <li>> C. Computação @ UniFil</li>
                         <li>> Full Stack @ EBAC</li>
@@ -87,55 +98,44 @@
                 </div>
 
                 <div class="bento-item quote-card reveal delay-3">
-                    <p>"Inovação através do código e estética."</p>
+                    <p data-i18n="quote">"Codando e ouvindo música."</p>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects container">
-            <h2 class="section-title">Projetos Selecionados <span class="line"></span></h2>
-            
+            <h2 class="section-title"><span data-i18n="title_projects">> Projetos_Selecionados</span> <span
+                    class="line"></span></h2>
+
             <div class="project-grid">
-                <article class="project-card reveal">
+                <article class="project-card reveal" data-repo="masunsolar/Portifolio">
                     <div class="card-header">
                         <span class="folder-icon">📁</span>
                         <div class="card-links">
-                            <a href="#" target="_blank">GITHUB</a>
-                            <a href="#" target="_blank">DEMO</a>
+                            <a href="https://github.com/masunsolar/Portifolio" target="_blank"
+                                class="full-card-link">GITHUB</a>
                         </div>
                     </div>
                     <h3>Portfólio Retro</h3>
-                    <p>Um site pessoal com estética CRT e alta performance.</p>
+                    <p>Um site pessoal com estética CRT.</p>
+
                     <div class="tech-list">
-                        <span>HTML</span><span>CSS</span><span>JS</span>
+                        <span>Carregando...</span>
                     </div>
                 </article>
 
-                <article class="project-card reveal delay-1">
+                <article class="project-card reveal delay-1" data-repo="masunsolar/Ex_java">
                     <div class="card-header">
                         <span class="folder-icon">📁</span>
                         <div class="card-links">
-                            <a href="#" target="_blank">GITHUB</a>
+                            <a href="https://github.com/masunsolar/Ex_java" target="_blank"
+                                class="full-card-link">GITHUB</a>
                         </div>
                     </div>
-                    <h3>Automação Python</h3>
-                    <p>Script para otimização de tarefas acadêmicas.</p>
+                    <h3>Exercícios Java</h3>
+                    <p>Repositório com exercícios de programação em Java.</p>
                     <div class="tech-list">
-                        <span>Python</span><span>Pandas</span>
-                    </div>
-                </article>
-
-                <article class="project-card reveal delay-2">
-                    <div class="card-header">
-                        <span class="folder-icon">📁</span>
-                        <div class="card-links">
-                            <a href="#" target="_blank">GITHUB</a>
-                        </div>
-                    </div>
-                    <h3>Java Banking API</h3>
-                    <p>Backend robusto para transações financeiras.</p>
-                    <div class="tech-list">
-                        <span>Java</span><span>Spring</span>
+                        <span>Carregando...</span>
                     </div>
                 </article>
             </div>
@@ -143,10 +143,33 @@
 
         <section id="contact" class="contact container">
             <div class="contact-box reveal">
-                <h2>Vamos trabalhar juntos?</h2>
-                <p>Estou disponível para freelance e oportunidades.</p>
-                <a href="mailto:masunsolar@gmail.com" class="btn primary huge">Mandar E-mail</a>
-                
+                <h2 data-i18n="contact_title">>> INICIAR_COMUNICACAO</h2>
+                <p data-i18n="contact_desc">Envie uma mensagem criptografada para o sistema.</p>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+                    <input type="hidden" name="access_key" value="b4be2ea0-a382-4f2a-afc2-6d53300d3c1a">
+
+                    <div class="input-group">
+                        <span class="input-prefix">USER@NAME:~$</span>
+                        <input type="text" name="name" placeholder="Seu Nome / Codinome" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-prefix">USER@EMAIL:~$</span>
+                        <input type="email" name="email" placeholder="seu_email@exemplo.com" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-prefix">MESSAGE:~$</span>
+                        <textarea name="message" placeholder="Digite sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn primary huge" data-i18n="btn_send">ENVIAR DADOS</button>
+
+                </form>
+
                 <footer class="footer-links">
                     <a href="https://instagram.com/nathansunrodriguez/">Instagram</a>
                     <a href="https://linkedin.com/in/natanrodrigues/">LinkedIn</a>
@@ -160,16 +183,29 @@
         <div class="modal-box">
             <h3 class="modal-title">>> SYSTEM_OVERRIDE // IDENTIFY</h3>
             <p class="modal-desc">Please enter your username to continue:</p>
-            
+
             <input type="text" id="user-input" placeholder="TYPE_NAME_HERE..." autocomplete="off" maxlength="15">
-            
+
             <div class="modal-buttons">
                 <button id="modal-cancel" class="btn secondary">CANCEL</button>
                 <button id="modal-confirm" class="btn primary">CONFIRM</button>
             </div>
         </div>
     </div>
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h3 class="modal-title">>> STATUS: 200 OK</h3>
+            <p class="modal-desc">
+                Mensagem enviada com sucesso.<br>
+                O desenvolvedor entrará em contato em breve. :)
+            </p>
+            <div class="modal-buttons">
+                <button id="close-success" class="btn primary">CONFIRMAR</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

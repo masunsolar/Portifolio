@@ -1,0 +1,410 @@
+/* Botões Gerais */
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.btn.primary {
+    background: var(--primary);
+    color: #000;
+    margin-right: 15px;
+}
+
+.btn.primary:hover {
+    box-shadow: 5px 5px 0px white;
+    transform: translate(-2px, -2px);
+}
+
+.btn.secondary {
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+}
+
+.btn.secondary:hover { 
+    background: rgba(255,255,255,0.1); 
+}
+
+.btn-contact {
+    cursor: pointer;
+    border: 1px solid var(--primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.btn-contact:hover {
+    background: var(--primary);
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+/* Seletor de Idioma */
+.lang-switch {
+    font-family: var(--font-display);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    /* Margin removida pois usamos gap na navbar */
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang-btn:hover { color: var(--primary); }
+
+.lang-btn.active {
+    color: var(--primary);
+    text-shadow: 0 0 5px var(--primary);
+    font-weight: bold;
+}
+
+.mobile-toggle {
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Tag Mono */
+.mono-tag {
+    font-family: var(--font-display);
+    color: var(--primary);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10001; /* Fica acima do CRT */
+    pointer-events: auto;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.mono-tag:hover {
+    text-shadow: 0 0 8px var(--primary);
+    color: #fff;
+}
+
+/* Code Block */
+.code-block {
+    background: #0f0f0f;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    display: none; /* Esconde no mobile por padrão */
+}
+/* Cores do Code Block */
+.kwd { color: #ff79c6; }
+.str { color: #f1fa8c; }
+.bool { color: #bd93f9; }
+.cls { color: #8be9fd; }
+.indent { margin-left: 20px; }
+.double-indent { margin-left: 40px; }
+
+/* Bento Items & Cards */
+.bento-item {
+    background: var(--bg-card);
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.bento-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* Profile Card Specific */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    background: var(--bg-card);
+    height: 100%; 
+}
+
+.profile-img {
+    position: relative;
+    width: 100%;
+    height: 420px; 
+    object-fit: cover;
+    object-position: center 20%; 
+    opacity: 0.85;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid rgba(72, 188, 65, 0.3);
+}
+
+.bento-item:hover .profile-img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.overlay-text {
+    padding: 20px;
+    width: 100%;
+    background: transparent;
+    text-align: left;
+    flex-grow: 1; 
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-text h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.overlay-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Tags & Lists */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tags span {
+    background: rgba(72, 188, 65, 0.1);
+    color: var(--primary);
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    border: 1px solid var(--primary-dim);
+}
+
+.list-retro li {
+    list-style: none;
+    font-family: var(--font-display);
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+/* Project Cards */
+.project-card {
+    cursor: pointer;
+    background: var(--bg-card);
+    border: 1px solid #333;
+    padding: 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    background: #161616;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.card-links a {
+    font-size: 0.8rem;
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 10px;
+    font-family: var(--font-display);
+}
+
+.full-card-link::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1; 
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.project-card:hover h3 {
+    color: var(--primary);
+    text-shadow: 0 0 5px var(--primary);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.tech-list span {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-right: 15px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-top: 15px;
+    min-height: 30px; 
+}
+
+/* Modal Components */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 20000; 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-box {
+    background: #0a0a0a;
+    border: 2px solid var(--primary);
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 0 30px rgba(72, 188, 65, 0.2);
+    text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-title {
+    color: var(--primary);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.modal-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-family: var(--font-body);
+}
+
+#user-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 25px;
+    outline: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#user-input:focus {
+    border-bottom-color: var(--primary);
+    box-shadow: 0 10px 20px -10px rgba(72, 188, 65, 0.2);
+}
+
+#user-input::placeholder { color: #333; }
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-buttons .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: auto;
+}
+
+#modal-cancel {
+    background-color: transparent; 
+    border: 1px solid #ff5555;
+    color: #ff5555;
+    transition: 0.3s;
+}
+
+#modal-cancel:hover {
+    background-color: #ff5555;
+    color: #000;
+    box-shadow: 0 0 15px #ff5555;
+}
+
+/* Formulário Terminal */
+.contact-form {
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.input-group {
+    background: #000;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+.input-group:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(72, 188, 65, 0.2);
+}
+
+.input-prefix {
+    color: var(--primary);
+    font-family: var(--font-display);
+    margin-right: 10px;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 10px;
+    border: none; 
+}
